@@ -1,3 +1,1 @@
-get_ctr_insur_id( Para, Res ) :-
-:prop.getd (Para, oid, [], Oid) &:Oid.get_type (Ctr_type) &
-Class=get:Oid.usr_class &if Class==$contract:p_cpp then Res=default(get:Oid.insured_id,"") else (ifCtr_type == "P"then:$report:p_report.find_insured_person (Oid, _, _, Insrd)else:$header:c_intervenor.find_insured ([subscription = Oid, categorie = "insured"], Insrd) &Res = default (get:Insrd.identify, ""))
+
